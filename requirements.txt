@@ -1,0 +1,13 @@
+# Dipendenze del progetto Python
+# Per installare: pip install -r requirements.txt
+
+# Librerie standard (già incluse con Python)
+# datetime
+# os
+# sys
+
+# Librerie esterne (aggiungi qui quelle che ti servono)
+# requests==2.31.0
+# pandas==2.1.0
+# numpy==1.24.0
+# matplotlib==3.7.0
