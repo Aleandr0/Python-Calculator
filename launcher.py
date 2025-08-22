@@ -9,12 +9,14 @@ import tkinter as tk
 from tkinter import messagebox
 import subprocess
 import sys
+import os
 
 
 def launch_console():
     """Avvia la versione console"""
     try:
-        subprocess.run([sys.executable, "main.py"], check=True)
+        # Avvia in una nuova finestra
+        subprocess.Popen([sys.executable, "main.py"], creationflags=subprocess.CREATE_NEW_CONSOLE if sys.platform == "win32" else 0)
     except Exception as e:
         messagebox.showerror("Errore", f"Errore nell'avvio della versione console:\n{e}")
 
@@ -22,9 +24,14 @@ def launch_console():
 def launch_gui():
     """Avvia la versione GUI"""
     try:
-        subprocess.run([sys.executable, "gui_calculator.py"], check=True)
+        # Importa e avvia direttamente la GUI
+        from gui_calculator import ModernCalculator
+        app = ModernCalculator()
+        app.run()
     except Exception as e:
         messagebox.showerror("Errore", f"Errore nell'avvio della versione GUI:\n{e}")
+    except ImportError as e:
+        messagebox.showerror("Errore", f"Impossibile importare la GUI:\n{e}")
 
 
 def create_launcher():

@@ -29,7 +29,12 @@ Questo progetto dimostra come creare un'applicazione Python completa con:
 
 ### Esecuzione
 
-**🚀 Launcher (Raccomandato):**
+**🚀 Launcher Semplice (Raccomandato):**
+```bash
+python start.py
+```
+
+**🚀 Launcher Avanzato:**
 ```bash
 python launcher.py
 ```
@@ -48,7 +53,8 @@ python main.py
 
 ```
 Python_AM/
-├── launcher.py          # 🚀 Launcher per scegliere interfaccia
+├── start.py             # 🚀 Launcher semplice (raccomandato)
+├── launcher.py          # 🚀 Launcher avanzato con subprocess
 ├── gui_calculator.py    # 🎨 Interfaccia grafica moderna
 ├── main.py              # 💻 Interfaccia console principale
 ├── utils.py             # 🛠️ Funzioni di utilità
