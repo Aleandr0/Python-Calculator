@@ -29,8 +29,17 @@ Questo progetto dimostra come creare un'applicazione Python completa con:
 
 ### Esecuzione
 
-Per eseguire l'applicazione:
+**🚀 Launcher (Raccomandato):**
+```bash
+python launcher.py
+```
 
+**🎨 Interfaccia Grafica:**
+```bash
+python gui_calculator.py
+```
+
+**💻 Interfaccia Console:**
 ```bash
 python main.py
 ```
@@ -39,21 +48,49 @@ python main.py
 
 ```
 Python_AM/
-├── main.py              # File principale dell'applicazione
-├── requirements.txt     # Dipendenze del progetto
-├── README.md           # Documentazione (questo file)
-├── .gitignore          # File da ignorare in Git
-└── tests/              # Cartella per i test (da creare)
+├── launcher.py          # 🚀 Launcher per scegliere interfaccia
+├── gui_calculator.py    # 🎨 Interfaccia grafica moderna
+├── main.py              # 💻 Interfaccia console principale
+├── utils.py             # 🛠️ Funzioni di utilità
+├── ui.py                # 📱 Componenti UI aggiuntivi
+├── config.py            # ⚙️ Configurazione applicazione
+├── requirements.txt     # 📦 Dipendenze del progetto
+├── README.md           # 📖 Documentazione
+├── .gitignore          # 🚫 File da ignorare in Git
+├── data/               # 📊 Cartella dati
+├── logs/               # 📝 Cartella log
+├── output/             # 📤 Cartella output
+└── tests/              # 🧪 Cartella test
 ```
 
 ## 🎯 Funzionalità
 
 L'applicazione include le seguenti funzionalità:
 
-1. **Saluto utente**: Chiede il nome e saluta l'utente
-2. **Data e ora**: Mostra la data e ora corrente
-3. **Calcolo somma**: Calcola la somma di due numeri
-4. **Menu interattivo**: Interfaccia utente semplice e intuitiva
+### 🎨 **Interfaccia Grafica Moderna**
+- **Layout accattivante** con colori moderni
+- **Popup eleganti** per mostrare risultati
+- **Pulsanti categorizzati** per facile navigazione
+- **Stili personalizzati** e icone intuitive
+
+### 🧮 **Operazioni Matematiche**
+1. **➕ Addizione e ✖️ Moltiplicazione** con formattazione italiana
+2. **! Fattoriale** per calcoli avanzati
+3. **🔍 Verifica numeri primi** con scomposizione in fattori
+4. **📋 Divisori** di qualsiasi numero
+5. **📐 MCD e MCM** (Massimo Comune Divisore e Minimo Comune Multiplo)
+6. **📊 Media** di liste di numeri
+
+### 🛠️ **Utilità Avanzate**
+- **🔐 Generatore password** sicure
+- **📅 Data e ora** corrente formattata
+- **🧪 Test funzioni** per verificare tutte le operazioni
+- **📊 Formattazione numeri** italiana (1.234.567,89)
+
+### 💻 **Doppia Interfaccia**
+- **🎨 GUI moderna** con tkinter
+- **💻 Console classica** per utenti avanzati
+- **🚀 Launcher** per scegliere l'interfaccia
 
 ## 🛠️ Sviluppo
 
