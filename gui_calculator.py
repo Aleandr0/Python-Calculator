@@ -272,33 +272,44 @@ class ModernCalculator:
     def mostra_risultato(self, formula, risultato, titolo="Risultato"):
         """Mostra il risultato in un popup elegante"""
         messaggio = f"Formula: {formula}\n\nRisultato: {risultato}"
-        messagebox.showinfo(titolo, messaggio)
+        # Assicura che il popup appaia sopra la finestra principale
+        self.root.lift()
+        messagebox.showinfo(titolo, messaggio, parent=self.root)
     
     def get_number_input(self, prompt, title="Input Numero"):
         """Ottiene un numero dall'utente con dialog"""
         while True:
             try:
-                value = simpledialog.askfloat(title, prompt)
+                # Porta la finestra in primo piano e usa parent
+                self.root.lift()
+                self.root.focus_force()
+                value = simpledialog.askfloat(title, prompt, parent=self.root)
                 if value is None:  # Utente ha premuto Cancel
                     return None
                 return value
             except:
-                messagebox.showerror("Errore", "Inserisci un numero valido!")
+                messagebox.showerror("Errore", "Inserisci un numero valido!", parent=self.root)
     
     def get_integer_input(self, prompt, title="Input Numero Intero"):
         """Ottiene un numero intero dall'utente con dialog"""
         while True:
             try:
-                value = simpledialog.askinteger(title, prompt)
+                # Porta la finestra in primo piano e usa parent
+                self.root.lift()
+                self.root.focus_force()
+                value = simpledialog.askinteger(title, prompt, parent=self.root)
                 if value is None:  # Utente ha premuto Cancel
                     return None
                 return value
             except:
-                messagebox.showerror("Errore", "Inserisci un numero intero valido!")
+                messagebox.showerror("Errore", "Inserisci un numero intero valido!", parent=self.root)
     
     def get_string_input(self, prompt, title="Input"):
         """Ottiene una stringa dall'utente con dialog"""
-        return simpledialog.askstring(title, prompt)
+        # Porta la finestra in primo piano e usa parent
+        self.root.lift()
+        self.root.focus_force()
+        return simpledialog.askstring(title, prompt, parent=self.root)
     
     # Funzioni matematiche
     def addizione(self):
@@ -447,11 +458,15 @@ class ModernCalculator:
         test_results.append(f"Scomposizione di 30: {fattori_30}")
         
         risultato = "\n".join(test_results)
-        messagebox.showinfo("🧪 Test Funzioni di Utilità", risultato)
+        # Assicura che il popup appaia sopra la finestra principale
+        self.root.lift()
+        messagebox.showinfo("🧪 Test Funzioni di Utilità", risultato, parent=self.root)
     
     def esci(self):
         """Chiude l'applicazione"""
-        if messagebox.askokcancel("Uscita", "Vuoi davvero uscire dall'applicazione?"):
+        # Assicura che il popup appaia sopra la finestra principale
+        self.root.lift()
+        if messagebox.askokcancel("Uscita", "Vuoi davvero uscire dall'applicazione?", parent=self.root):
             self.root.destroy()
     
     def run(self):
