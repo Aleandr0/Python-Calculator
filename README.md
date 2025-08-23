@@ -44,6 +44,12 @@ python launcher.py
 python gui_calculator.py
 ```
 
+**🎨 GUI senza Console (Windows):**
+```bash
+python gui_calculator.pyw
+```
+*Oppure doppio click su gui_calculator.pyw*
+
 **💻 Interfaccia Console:**
 ```bash
 python main.py
@@ -56,6 +62,7 @@ Python_AM/
 ├── start.py             # 🚀 Launcher semplice (raccomandato)
 ├── launcher.py          # 🚀 Launcher avanzato con subprocess
 ├── gui_calculator.py    # 🎨 Interfaccia grafica moderna
+├── gui_calculator.pyw   # 🎨 GUI senza console (Windows)
 ├── main.py              # 💻 Interfaccia console principale
 ├── utils.py             # 🛠️ Funzioni di utilità
 ├── ui.py                # 📱 Componenti UI aggiuntivi

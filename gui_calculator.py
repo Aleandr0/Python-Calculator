@@ -9,10 +9,15 @@ import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 from datetime import datetime
 import utils
+import sys
+import os
 
 
 class ModernCalculator:
     def __init__(self):
+        # Nascondi la finestra della console su Windows
+        self.hide_console()
+        
         self.root = tk.Tk()
         self.root.title("🧮 Python Calculator - Versione GUI")
         self.root.geometry("800x700")
@@ -37,6 +42,20 @@ class ModernCalculator:
         self.create_widgets()
         self.center_window()
     
+    def hide_console(self):
+        """Nasconde la finestra della console su Windows"""
+        if sys.platform == "win32":
+            try:
+                import ctypes
+                # Ottieni l'handle della finestra della console
+                console_window = ctypes.windll.kernel32.GetConsoleWindow()
+                if console_window:
+                    # Nascondi la finestra (SW_HIDE = 0)
+                    ctypes.windll.user32.ShowWindow(console_window, 0)
+            except:
+                # Se non riesce, continua comunque
+                pass
+    
     def setup_styles(self):
         """Configura gli stili personalizzati"""
         style = ttk.Style()
@@ -44,29 +63,40 @@ class ModernCalculator:
         # Stile per i pulsanti principali
         style.configure(
             "Modern.TButton",
-            foreground=self.colors['text_light'],
+            foreground="white",  # Bianco puro per massimo contrasto
             background=self.colors['accent'],
             font=('Segoe UI', 11, 'bold'),
-            padding=(10, 8)
+            padding=(10, 8),
+            borderwidth=0
         )
         
         # Stile per pulsanti di successo
         style.configure(
             "Success.TButton",
-            foreground=self.colors['text_light'],
+            foreground="white",  # Bianco puro per massimo contrasto
             background=self.colors['success'],
             font=('Segoe UI', 11, 'bold'),
-            padding=(10, 8)
+            padding=(10, 8),
+            borderwidth=0
         )
         
         # Stile per pulsanti di attenzione
         style.configure(
             "Warning.TButton",
-            foreground=self.colors['text_light'],
+            foreground="white",  # Bianco puro per massimo contrasto
             background=self.colors['warning'],
             font=('Segoe UI', 11, 'bold'),
-            padding=(10, 8)
+            padding=(10, 8),
+            borderwidth=0
         )
+        
+        # Stili per hover effect
+        style.map("Modern.TButton",
+                  background=[('active', '#2980b9')])  # Più scuro quando hover
+        style.map("Success.TButton", 
+                  background=[('active', '#229954')])  # Più scuro quando hover
+        style.map("Warning.TButton",
+                  background=[('active', '#e67e22')])  # Più scuro quando hover
     
     def center_window(self):
         """Centra la finestra sullo schermo"""

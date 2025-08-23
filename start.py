@@ -52,6 +52,9 @@ def main():
         """Avvia GUI e chiudi launcher"""
         try:
             root.destroy()
+            # Nascondi anche la console del launcher se siamo su Windows
+            if tk._default_root:
+                tk._default_root.withdraw()
             from gui_calculator import ModernCalculator
             app = ModernCalculator()
             app.run()
