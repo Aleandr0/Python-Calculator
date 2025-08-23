@@ -11,6 +11,7 @@ from datetime import datetime
 import utils
 import sys
 import os
+import time
 
 
 class ModernCalculator:
@@ -283,6 +284,9 @@ class ModernCalculator:
                 # Porta la finestra in primo piano e usa parent
                 self.root.lift()
                 self.root.focus_force()
+                # Piccola pausa per assicurare il focus del dialog
+                self.root.update()
+                time.sleep(0.1)  # 100ms di pausa
                 value = simpledialog.askfloat(title, prompt, parent=self.root)
                 if value is None:  # Utente ha premuto Cancel
                     return None
@@ -297,6 +301,9 @@ class ModernCalculator:
                 # Porta la finestra in primo piano e usa parent
                 self.root.lift()
                 self.root.focus_force()
+                # Piccola pausa per assicurare il focus del dialog
+                self.root.update()
+                time.sleep(0.1)  # 100ms di pausa
                 value = simpledialog.askinteger(title, prompt, parent=self.root)
                 if value is None:  # Utente ha premuto Cancel
                     return None
@@ -309,6 +316,9 @@ class ModernCalculator:
         # Porta la finestra in primo piano e usa parent
         self.root.lift()
         self.root.focus_force()
+        # Piccola pausa per assicurare il focus del dialog
+        self.root.update()
+        time.sleep(0.1)  # 100ms di pausa
         return simpledialog.askstring(title, prompt, parent=self.root)
     
     # Funzioni matematiche
