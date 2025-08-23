@@ -63,7 +63,7 @@ class ModernCalculator:
         # Stile per i pulsanti principali
         style.configure(
             "Modern.TButton",
-            foreground="white",  # Bianco puro per massimo contrasto
+            foreground="black",  # Nero per massima compatibilità
             background=self.colors['accent'],
             font=('Segoe UI', 11, 'bold'),
             padding=(10, 8),
@@ -73,7 +73,7 @@ class ModernCalculator:
         # Stile per pulsanti di successo
         style.configure(
             "Success.TButton",
-            foreground="white",  # Bianco puro per massimo contrasto
+            foreground="black",  # Nero per massima compatibilità
             background=self.colors['success'],
             font=('Segoe UI', 11, 'bold'),
             padding=(10, 8),
@@ -83,7 +83,7 @@ class ModernCalculator:
         # Stile per pulsanti di attenzione
         style.configure(
             "Warning.TButton",
-            foreground="white",  # Bianco puro per massimo contrasto
+            foreground="black",  # Nero per massima compatibilità
             background=self.colors['warning'],
             font=('Segoe UI', 11, 'bold'),
             padding=(10, 8),

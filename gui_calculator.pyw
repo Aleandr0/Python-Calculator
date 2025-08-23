@@ -1,3 +1,4 @@
+#! python3
 #!/usr/bin/env python3
 """
 GUI Calculator - Interfaccia Grafica senza Console (.pyw)
