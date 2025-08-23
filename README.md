@@ -55,6 +55,24 @@ python gui_calculator.pyw
 python main.py
 ```
 
+### 📦 Eseguibile Standalone
+
+**🚀 Crea eseguibile (.exe):**
+```bash
+python build_exe.py
+```
+
+**📁 Oppure direttamente con PyInstaller:**
+```bash
+pyinstaller --onefile --windowed --name PythonCalculator gui_calculator.py
+```
+
+L'eseguibile verrà creato in `dist/PythonCalculator.exe` e può essere:
+- ✅ Eseguito senza Python installato
+- ✅ Condiviso su altri computer Windows
+- ✅ Avviato con doppio click
+- ✅ Copiato su USB/cloud storage
+
 ## 📁 Struttura del progetto
 
 ```
@@ -64,6 +82,8 @@ Python_AM/
 ├── gui_calculator.py    # 🎨 Interfaccia grafica moderna
 ├── gui_calculator.pyw   # 🎨 GUI senza console (Windows)
 ├── main.py              # 💻 Interfaccia console principale
+├── build_exe.py         # 🔨 Script per creare eseguibile
+├── calculator.spec      # ⚙️ Configurazione PyInstaller
 ├── utils.py             # 🛠️ Funzioni di utilità
 ├── ui.py                # 📱 Componenti UI aggiuntivi
 ├── config.py            # ⚙️ Configurazione applicazione
