@@ -215,7 +215,7 @@ def test_funzioni_utilità():
     
     # Test utility
     print(f"Password generata: {utils.genera_password(10)}")
-    print(f"3.661 secondi = {utils.formatta_tempo(3661)}")
+    print(f"3.661 secondi in hh:mm:ss = {utils.formatta_tempo(3661)}")
     print(f"20 su 80 = {utils.formatta_numero(utils.calcola_percentuale(20, 80))}%")
     lista_test = [3, 1, 4, 1, 5]
     lista_ordinata = [utils.formatta_numero(n) for n in utils.ordina_lista(lista_test)]

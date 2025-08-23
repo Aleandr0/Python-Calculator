@@ -408,7 +408,7 @@ class ModernCalculator:
         
         # Test utility
         test_results.append(f"Password generata: {utils.genera_password(10)}")
-        test_results.append(f"3.661 secondi = {utils.formatta_tempo(3661)}")
+        test_results.append(f"3.661 secondi in hh:mm:ss = {utils.formatta_tempo(3661)}")
         test_results.append(f"20 su 80 = {utils.formatta_numero(utils.calcola_percentuale(20, 80))}%")
         
         fattori_12 = ' × '.join([utils.formatta_numero(f) for f in utils.scomponi_in_fattori_primi(12)])
